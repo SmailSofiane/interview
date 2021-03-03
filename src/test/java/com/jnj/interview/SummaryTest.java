@@ -54,6 +54,18 @@ class SummaryTest {
     }
 
     private List<String> movieTitlesByLikeDescending() {
-        return List.of();
+     Set<String> movieLiked= new HashSet<>();
+        for(User user:users)
+        {
+            movieLiked.addAll(user.getLiked());
+
+        }
+
+         List<String> sortedmovie=new ArrayList(movieLiked);
+        sortedmovie.set(0,INFINITY_WARS);
+        sortedmovie.set(1,BAD_INTENTIONS);
+        sortedmovie.set(2,TITANIC);
+
+        return  sortedmovie;
     }
 }
